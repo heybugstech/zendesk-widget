@@ -1,14 +1,14 @@
 {
   "name": "zendesk-support-app",
   "version": "1.0.0",
-  "description": "[brief description of the app]",
-  "main": "index.js",
+  "description": "Daspu's Zendesk app",
+  "main": "src/js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "devZendesk": "zat server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jay Chiarella",
   "license": "ISC",
   "type": "module",
   "devDependencies": {

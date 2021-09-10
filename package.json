@@ -5,16 +5,29 @@
   "main": "src/js/index.js",
   "scripts": {
     "build": "tsc -p .",
-    "devZendesk": "zat server"
+    "dev:zendesk": "tsc -p . && zat server",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint": "eslint . --ext .ts",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Jay Chiarella",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "dotenv": "^10.0.0"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.{js,ts,css,md}": "prettier --write"
   }
 }

@@ -1,10 +1,11 @@
+enum BugAdaptors {
+  Jira
+}
+
 export class KnownProblemUi {
+  private bugAdaptor: BugAdaptors;
 
-
-    constructor() {
-    }
-
-    getMain(){
-        return "hey"
-    }
+  constructor(bugAdaptor: BugAdaptors) {
+    this.bugAdaptor = bugAdaptor;
+  }
 }

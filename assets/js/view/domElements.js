@@ -1,5 +1,5 @@
-const knownProblemsDiv = document.querySelector('#known-problems');
-const similarTicketsDiv = document.querySelector('#similar-tickets');
+//const knownProblemsDiv = document.querySelector('#known-problems');
+//const similarTicketsDiv = document.querySelector('#similar-tickets');
 export class CustomDiv {
   constructor(divId, htmlEl) {
     this.divId = divId;

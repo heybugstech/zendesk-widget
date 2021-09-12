@@ -1,7 +1,9 @@
+var BugAdaptors;
+(function (BugAdaptors) {
+  BugAdaptors[(BugAdaptors['Jira'] = 0)] = 'Jira';
+})(BugAdaptors || (BugAdaptors = {}));
 export class KnownProblemUi {
-    constructor() {
-    }
-    getMain() {
-        return "hey";
-    }
+  constructor(bugAdaptor) {
+    this.bugAdaptor = bugAdaptor;
+  }
 }

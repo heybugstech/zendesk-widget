@@ -4,23 +4,27 @@
   "description": "Daspu's Zendesk app",
   "main": "src/js/index.js",
   "scripts": {
-    "build": "tsc -p .",
+    "assets:clean": "node --loader ts-node/esm src/scripts/cleanAssetsFolder.ts ",
+    "build": "npm run assets:clean && tsc -p .",
     "dev:zendesk": "tsc -p . && zat server",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "install:clean": "rm -rf node_modules && npm i"
   },
   "keywords": [],
   "author": "Jay Chiarella",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@types/node": "^16.9.1",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
   "dependencies": {

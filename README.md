@@ -2,9 +2,9 @@
 
 ### Features:
 
-* Search 
-* Highlight the top 2 similar problem tickets, and button to expand list to 5 
-* Highlight top 3 similar tickets
+- Search
+- Highlight the top 2 similar problem tickets, and button to expand list to 5
+- Highlight top 3 similar tickets
 
 ### Develop
 
@@ -13,7 +13,8 @@
 ### Test
 
 **Manual testing**
-1. In your terminal, type `zat server`
+
+1. In your terminal, type `npm run build && npm run dev:zendesk`
 2. Open zendesk (at [d3v-daspu.zendesk.com](d3v-daspu.zendesk.com)) and open a ticket
 3. Append `?zat=true` to url
 
@@ -22,4 +23,3 @@
 ### Deploy
 
 N/A
-

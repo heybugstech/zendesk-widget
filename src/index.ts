@@ -1,12 +1,23 @@
 declare const ZAFClient: any;
 import { CustomDiv } from './view/domElements.js';
 
-const client = ZAFClient.init();
-client.invoke('resize', { width: '100%', height: '350px' });
+class ZendeskWidget {
+  constructor(knownIssuesEl: CustomDiv) {
+    this.initZendeskClient();
+    this.initKnownIssues(knownIssuesEl);
+  }
 
-const knownProblemHtml = new CustomDiv('known-problems', 'p');
-const test = knownProblemHtml.addInnerText('New New');
-knownProblemHtml.applyCssStyle('background-color', 'blue');
-knownProblemHtml.insertToParent();
-console.log(test);
-console.log('test');
+  private initKnownIssues(knownIssuesEl: CustomDiv) {
+    knownIssuesEl.addInnerText('New New');
+    knownIssuesEl.applyCssStyle('background-color', 'blue');
+    knownIssuesEl.insertToParent();
+  }
+
+  private initZendeskClient() {
+    const client = ZAFClient.init();
+    client.invoke('resize', { width: '100%', height: '350px' });
+  }
+}
+
+const knownIssuesHtmlEl = new CustomDiv('known-issues', 'p');
+new ZendeskWidget(knownIssuesHtmlEl);

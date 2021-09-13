@@ -26,6 +26,6 @@ function deleteFolderRecursively(folder: string, fileWhitelist: string[]) {
 }
 
 const assetWhileListedFiles = ['zendesk_client_sdk.js'];
-const assetDir = 'assets/js';
+const assetDir = 'widget/assets/js';
 
 deleteFolderRecursively(assetDir, assetWhileListedFiles);

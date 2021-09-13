@@ -1,0 +1,15 @@
+html,
+body {
+  height: 100%;
+}
+
+.search-box {
+  width: 98%;
+  font-size: 1.2em;
+  padding: 0.1em;
+}
+
+.known-problems-box {
+  border-radius: 0.2em;
+  background-color: #9ca3af;
+}

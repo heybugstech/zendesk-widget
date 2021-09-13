@@ -1,7 +1,7 @@
 {
   "name": "zendesk-support-app",
   "version": "1.0.0",
-  "description": "Daspu's Zendesk app",
+  "description": "Daspu's Zendesk Widget",
   "main": "src/js/index.js",
   "scripts": {
     "assets:clean": "node --loader ts-node/esm src/scripts/cleanAssetsFolder.ts ",

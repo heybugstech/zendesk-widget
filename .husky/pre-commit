@@ -1,5 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run assets:clean
-npx lint-staged
+npm run assets:clean && npx lint-staged

@@ -9,6 +9,7 @@
 ### Develop
 
 1. [Install ruby](https://developer.zendesk.com/documentation/apps/getting-started/system-prep-for-app-developers/2-managing-ruby-versions/) and zat gem
+2. Install node modules, `npm i`
 
 ### Test
 

@@ -1,23 +1,24 @@
 declare const ZAFClient: any;
-import { CustomDiv } from './view/domElements.js';
+import { KnownIssues } from './knownIssues/index.js';
 
 class ZendeskWidget {
-  constructor(knownIssuesEl: CustomDiv) {
-    this.initZendeskClient();
-    this.initKnownIssues(knownIssuesEl);
-  }
+  protected zendeskClient: any;
+  protected knownIssuesSection: KnownIssues;
 
-  private initKnownIssues(knownIssuesEl: CustomDiv) {
-    knownIssuesEl.addInnerText('New New');
-    knownIssuesEl.applyCssStyle('background-color', 'blue');
-    knownIssuesEl.insertToParent();
+  constructor() {
+    this.initZendeskClient();
   }
 
   private initZendeskClient() {
-    const client = ZAFClient.init();
-    client.invoke('resize', { width: '100%', height: '350px' });
+    this.zendeskClient = ZAFClient.init();
+    this.zendeskClient.invoke('resize', { width: '100%', height: '350px' });
+  }
+
+  public initKnownIssues(parentElId: string) {
+    this.knownIssuesSection = new KnownIssues(parentElId);
+    this.knownIssuesSection.createUI(this.knownIssuesSection.htmlEl);
   }
 }
 
-const knownIssuesHtmlEl = new CustomDiv('known-issues', 'p');
-new ZendeskWidget(knownIssuesHtmlEl);
+const zendeskWidget = new ZendeskWidget();
+zendeskWidget.initKnownIssues('known-issues');

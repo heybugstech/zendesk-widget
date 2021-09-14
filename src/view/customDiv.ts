@@ -1,12 +1,9 @@
-//const knownProblemsDiv = document.querySelector('#known-problems');
-//const similarTicketsDiv = document.querySelector('#similar-tickets');
-
 export class CustomDiv {
-  private divId: string;
+  private parentElId: string;
   private htmlEl: HTMLElement;
 
-  constructor(divId: string, htmlEl: string) {
-    this.divId = divId;
+  constructor(parentElId: string, htmlEl: string) {
+    this.parentElId = parentElId;
     this.htmlEl = document.createElement(htmlEl);
   }
 
@@ -19,6 +16,6 @@ export class CustomDiv {
   }
 
   public insertToParent(): void {
-    document.querySelector(`#${this.divId}`).appendChild(this.htmlEl);
+    document.querySelector(`#${this.parentElId}`).appendChild(this.htmlEl);
   }
 }

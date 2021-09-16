@@ -1,9 +1,9 @@
 declare const ZAFClient: any;
-import { KnownIssues } from './knownIssues/index.js';
+import { KnownIssuesSection } from './knownIssues/index.js';
 
 class ZendeskWidget {
   protected zendeskClient: any;
-  protected knownIssuesSection: KnownIssues;
+  protected knownIssuesSection: KnownIssuesSection;
 
   constructor() {
     this.initZendeskClient();
@@ -15,8 +15,7 @@ class ZendeskWidget {
   }
 
   public initKnownIssues(parentElId: string) {
-    this.knownIssuesSection = new KnownIssues(parentElId);
-    this.knownIssuesSection.createUI(this.knownIssuesSection.htmlEl);
+    this.knownIssuesSection = new KnownIssuesSection(parentElId);
   }
 }
 

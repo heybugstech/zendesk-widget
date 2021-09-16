@@ -11,10 +11,6 @@ export class CustomDiv {
     this.htmlEl.innerText = text;
   }
 
-  public applyCssStyle(userStyle: string, value: string): void {
-    this.htmlEl.style.setProperty(userStyle, value);
-  }
-
   public insertToParent(): void {
     document.querySelector(`#${this.parentElId}`).appendChild(this.htmlEl);
   }

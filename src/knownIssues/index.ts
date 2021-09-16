@@ -1,8 +1,4 @@
-import { CustomDiv } from '../htmlElements/customDiv.js';
-
-enum htmlElements {
-  P = 'p'
-}
+import { CustomDiv, htmlElements } from '../htmlElements/customDiv.js';
 
 export class KnownIssuesSection {
   public parentElId: string;

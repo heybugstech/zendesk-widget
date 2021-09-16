@@ -1,6 +1,12 @@
+enum htmlElements {
+  P = 'p'
+}
+
 export class CustomDiv {
   private parentElId: string;
   private htmlEl: HTMLElement;
+
+  private test: HTMLElementTagNameMap;
 
   constructor(parentElId: string, htmlEl: string) {
     this.parentElId = parentElId;

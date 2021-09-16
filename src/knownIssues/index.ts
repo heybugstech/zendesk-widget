@@ -1,4 +1,4 @@
-import { CustomDiv } from '../view/customDiv.js';
+import { CustomDiv } from '../htmlElements/customDiv.js';
 
 enum htmlElements {
   P = 'p'

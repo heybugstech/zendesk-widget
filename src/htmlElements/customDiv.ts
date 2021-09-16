@@ -1,4 +1,4 @@
-enum htmlElements {
+export enum htmlElements {
   P = 'p'
 }
 

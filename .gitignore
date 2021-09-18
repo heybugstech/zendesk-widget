@@ -5,3 +5,5 @@ package-lock.json
 widget/assets/js/index.js
 widget/assets/js/view
 widget/assets/js/knownIssues
+widget/assets/js/zendeskWidget.js
+widget/assets/js/htmlElements

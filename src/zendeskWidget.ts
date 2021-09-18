@@ -1,20 +1,27 @@
 declare const ZAFClient: any;
 import { KnownIssuesSection } from './knownIssues/index.js';
 
+export enum htmlIds {
+  KNOWN_ISSUES = 'known-issues-section'
+}
+
 export class ZendeskWidget {
   protected zendeskClient: any;
   protected knownIssuesSection: KnownIssuesSection;
 
-  constructor() {
+  constructor(knownIssuesParentId: htmlIds) {
     this.initZendeskClient();
+    this.knownIssuesSection = new KnownIssuesSection(knownIssuesParentId);
+    this.getTopIssuesOnLoad();
   }
 
   private initZendeskClient() {
     this.zendeskClient = ZAFClient.init();
-    this.zendeskClient.invoke('resize', { width: '100%', height: '350px' });
   }
 
-  public initKnownIssues(parentElId: string) {
-    this.knownIssuesSection = new KnownIssuesSection(parentElId);
+  public getTopIssuesOnLoad() {
+    this.knownIssuesSection.addOneKnownIssue();
+    this.knownIssuesSection.addOneKnownIssue();
+    this.knownIssuesSection.addOneKnownIssue();
   }
 }

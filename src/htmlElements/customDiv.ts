@@ -1,23 +1,35 @@
 export enum htmlElements {
-  P = 'p'
+  P = 'p',
+  Div = 'div'
 }
+
+type divText = {
+  text: string;
+  class: string;
+};
 
 export class CustomDiv {
   private parentElId: string;
-  private htmlEl: HTMLElement;
+  private baseDiv: HTMLDivElement;
 
-  private test: HTMLElementTagNameMap;
-
-  constructor(parentElId: string, htmlEl: string) {
+  constructor(parentElId: string) {
     this.parentElId = parentElId;
-    this.htmlEl = document.createElement(htmlEl);
+    this.baseDiv = document.querySelector(`#${this.parentElId}`);
   }
 
   public addInnerText(text: string): void {
-    this.htmlEl.innerText = text;
+    this.baseDiv.innerText = text;
   }
 
-  public insertToParent(): void {
-    document.querySelector(`#${this.parentElId}`).appendChild(this.htmlEl);
+  public addDivContainer(divClass: string, divText?: divText) {
+    const div = document.createElement(htmlElements.Div);
+    div.classList.add(divClass);
+    if (divText) {
+      const pEl = document.createElement(htmlElements.P);
+      pEl.classList.add(divText.class);
+      pEl.innerText = divText.text;
+      div.appendChild(pEl);
+    }
+    this.baseDiv.appendChild(div);
   }
 }

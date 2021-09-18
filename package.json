@@ -6,7 +6,7 @@
   "scripts": {
     "assets:clean": "node --loader ts-node/esm src/scripts/cleanAssetsFolder.ts ",
     "build": "npm run assets:clean && tsc -p .",
-    "dev:zendesk": "cd widget && zat server",
+    "dev:zendesk": "npm run build && cd widget && zat server",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
     "prepare": "husky install",

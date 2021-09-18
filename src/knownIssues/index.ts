@@ -1,12 +1,22 @@
 import { CustomDiv, htmlElements } from '../htmlElements/customDiv.js';
 
+enum cssClasses {
+  knownIssue = 'known-issue',
+  knownIssueText = 'known-issue-text'
+}
+
 export class KnownIssuesSection {
-  public parentElId: string;
-  public htmlEl: CustomDiv;
+  public knownIssuesDiv: CustomDiv;
 
   constructor(parentElId: string) {
-    this.parentElId = parentElId;
-    this.htmlEl = new CustomDiv(parentElId, htmlElements.P);
-    this.htmlEl.insertToParent();
+    this.knownIssuesDiv = new CustomDiv(parentElId);
+  }
+
+  public addOneKnownIssue() {
+    const placeholderText = {
+      class: cssClasses.knownIssueText,
+      text: 'I am a placeholder text'
+    };
+    this.knownIssuesDiv.addDivContainer(cssClasses.knownIssue, placeholderText);
   }
 }

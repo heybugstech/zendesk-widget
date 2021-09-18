@@ -1,13 +1,20 @@
 import { KnownIssuesSection } from './knownIssues/index.js';
+export var htmlIds;
+(function (htmlIds) {
+  htmlIds['KNOWN_ISSUES'] = 'known-issues-section';
+})(htmlIds || (htmlIds = {}));
 export class ZendeskWidget {
-  constructor() {
+  constructor(knownIssuesParentId) {
     this.initZendeskClient();
+    this.knownIssuesSection = new KnownIssuesSection(knownIssuesParentId);
+    this.getTopIssuesOnLoad();
   }
   initZendeskClient() {
     this.zendeskClient = ZAFClient.init();
-    this.zendeskClient.invoke('resize', { width: '100%', height: '350px' });
   }
-  initKnownIssues(parentElId) {
-    this.knownIssuesSection = new KnownIssuesSection(parentElId);
+  getTopIssuesOnLoad() {
+    this.knownIssuesSection.addOneKnownIssue();
+    this.knownIssuesSection.addOneKnownIssue();
+    this.knownIssuesSection.addOneKnownIssue();
   }
 }

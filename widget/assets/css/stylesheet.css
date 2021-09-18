@@ -19,13 +19,25 @@ body {
   background-color: #9ca3af;
 }
 
-#known-issues {
+#known-issues-section {
   background-color: #cbc3e3;
   border-radius: 0.2em;
   padding: 0.2em;
 }
 
+.known-issue {
+  background-color: #e1dfe8d4;
+  border-radius: 0.2em;
+  padding: 0.3em;
+  margin: 0.6em 0.2em;
+}
+
+.known-issue-text {
+  margin: inherit;
+}
+
 .box-header {
   margin-top: 0;
+  margin-bottom: 8px;
   text-align: center;
 }

@@ -1,4 +1,4 @@
-import { CustomDiv, htmlElements } from '../htmlElements/customDiv.js';
+import { CustomDiv } from '../htmlElements/customDiv.js';
 
 enum cssClasses {
   knownIssue = 'known-issue',

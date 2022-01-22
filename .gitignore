@@ -1,2 +1,9 @@
 .idea
 node_modules
+package-lock.json
+.eslintcache
+widget/assets/js/index.js
+widget/assets/js/view
+widget/assets/js/knownIssues
+widget/assets/js/zendeskWidget.js
+widget/assets/js/htmlElements

@@ -9,7 +9,12 @@
   "private": true,
   "location": {
     "support": {
-      "ticket_sidebar": "assets/iframe.html"
+      "ticket_sidebar": {
+        "url": "assets/iframe.html",
+        "size": {
+          "height":"350px"
+        }
+      }
     }
   },
   "version": "1.0",

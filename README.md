@@ -1,6 +1,6 @@
 # Zendesk Widget
 
-Daspu interface in Zendesk. This interface will help users detect and resolve issues.
+heybugs interface in Zendesk. This interface will help users detect and resolve issues.
 
 ### Features:
 

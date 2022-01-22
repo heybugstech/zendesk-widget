@@ -2,16 +2,23 @@
   "name": "zendesk-support-app",
   "version": "1.0.0",
   "description": "[brief description of the app]",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "heybugs",
+    "bug",
+    "support",
+    "tech support",
+    "technical support"
+  ],
+  "author": "heybugs",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "prettier": "^2.5.1",
     "typescript": "^4.3.5"
   },
   "dependencies": {

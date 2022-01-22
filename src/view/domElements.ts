@@ -1,24 +1,30 @@
 const knownProblemsDiv = document.querySelector('#known-problems');
 const similarTicketsDiv = document.querySelector('#similar-tickets');
 
-export class CustomDiv {
-    private divId: string;
-    private htmlEl: HTMLElement;
+export class CustomDivWithParent {
+    private parentId: string;
+    private parentElement: HTMLElement | null;
+    private htmlElement: HTMLElement;
 
-    constructor(divId: string, htmlEl: string) {
-        this.divId = divId
-        this.htmlEl = document.createElement(htmlEl)
+    constructor(htmlElement: string, parentId: string, ) {
+        this.parentId = parentId
+        this.htmlElement = document.createElement(htmlElement)
+        this.parentElement = document.querySelector(`#${this.parentId}`)
+        if(!this.parentElement){
+            throw new Error(`No HTML element with id "${this.parentElement}" found.`)
+        }
+
     }
 
     public addInnerText(text:string) {
-        this.htmlEl.innerText = text;
+        this.htmlElement.innerText = text;
     }
 
     public applyCssStyle(userStyle: string, value: string) {
-        this.htmlEl.style.setProperty(userStyle, value)
+        this.htmlElement.style.setProperty(userStyle, value)
     }
 
     public insertHtmlElToParent() {
-        document.querySelector(`#${this.divId}`).appendChild(this.htmlEl)
+        this.parentElement!.appendChild(this.htmlElement)
     }
 }

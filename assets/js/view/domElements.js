@@ -1,17 +1,21 @@
 const knownProblemsDiv = document.querySelector('#known-problems');
 const similarTicketsDiv = document.querySelector('#similar-tickets');
-export class CustomDiv {
-    constructor(divId, htmlEl) {
-        this.divId = divId;
-        this.htmlEl = document.createElement(htmlEl);
+export class CustomDivWithParent {
+    constructor(htmlElement, parentId) {
+        this.parentId = parentId;
+        this.htmlElement = document.createElement(htmlElement);
+        this.parentElement = document.querySelector(`#${this.parentId}`);
+        if (!this.parentElement) {
+            throw new Error(`No HTML element with id "${this.parentElement}" found.`);
+        }
     }
     addInnerText(text) {
-        this.htmlEl.innerText = text;
+        this.htmlElement.innerText = text;
     }
     applyCssStyle(userStyle, value) {
-        this.htmlEl.style.setProperty(userStyle, value);
+        this.htmlElement.style.setProperty(userStyle, value);
     }
     insertHtmlElToParent() {
-        document.querySelector(`#${this.divId}`).appendChild(this.htmlEl);
+        this.parentElement.appendChild(this.htmlElement);
     }
 }

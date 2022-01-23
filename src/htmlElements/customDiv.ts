@@ -14,7 +14,14 @@ export class CustomDiv {
 
   constructor(parentElId: string) {
     this.parentElId = parentElId;
-    this.baseDiv = document.querySelector(`#${this.parentElId}`);
+    this.baseDiv = document.querySelector(
+      `#${this.parentElId}`
+    ) as HTMLDivElement;
+    if (!this.baseDiv) {
+      throw new Error(
+        `Could not find html element with id "${this.parentElId}"`
+      );
+    }
   }
 
   public addInnerText(text: string): void {

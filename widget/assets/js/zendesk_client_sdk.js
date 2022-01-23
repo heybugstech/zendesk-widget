@@ -1,6 +1,6 @@
 /*
 
-Save Network request by downloading code
+Save Network request loading zd client code from file
 
 */
 var ZAFClient = (function (n) {
@@ -80,9 +80,9 @@ var ZAFClient = (function (n) {
                   : typeof e;
               };
       /*! Native Promise Only
-        v0.8.1 (c) Kyle Simpson
-        MIT License: http://getify.mit-license.org
-    */
+    v0.8.1 (c) Kyle Simpson
+    MIT License: http://getify.mit-license.org
+*/
       (i = function () {
         var t,
           a,
@@ -1333,4 +1333,3 @@ var ZAFClient = (function (n) {
     t.default = i;
   }
 ]).default;
-//# sourceMappingURL=zaf_sdk.min.js.map

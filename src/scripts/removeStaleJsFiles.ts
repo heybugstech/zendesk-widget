@@ -1,6 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+const SAFELISTED_FILES = ['zendesk_client_sdk.js'];
+const ASSET_DIRECTORY = 'widget/assets/js';
+
 function deleteFolderRecursively(folder: string, fileWhitelist: string[]) {
   const folderWithPath = path.resolve(folder);
 
@@ -18,14 +21,11 @@ function deleteFolderRecursively(folder: string, fileWhitelist: string[]) {
       if (!fileWhitelist.includes(file)) {
         const fullPath = folderWithPath + '/' + file;
         fs.rm(fullPath, { recursive: true }, () => {
-          console.log(`Recursively delete files in ${fullPath}`);
+          console.log(`Deleted file/files in "${fullPath}""`);
         });
       }
     }
   });
 }
 
-const assetWhileListedFiles = ['zendesk_client_sdk.js'];
-const assetDir = 'widget/assets/js';
-
-deleteFolderRecursively(assetDir, assetWhileListedFiles);
+deleteFolderRecursively(ASSET_DIRECTORY, SAFELISTED_FILES);

@@ -4,7 +4,7 @@
   "description": "heybugs' Zendesk Widget",
   "main": "src/js/index.js",
   "scripts": {
-    "assets:clean": "node --loader ts-node/esm src/scripts/cleanAssetsFolder.ts ",
+    "assets:clean": "node --loader ts-node/esm src/scripts/removeStaleJsFiles.ts ",
     "build": "npm run assets:clean && tsc -p .",
     "dev:zendesk": "npm run build && cd widget && zat server",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",

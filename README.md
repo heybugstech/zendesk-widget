@@ -4,7 +4,6 @@ heybugs interface in Zendesk. This interface will help users detect and resolve 
 
 ### Features:
 
-- Search
 - Highlight the top 3 similar problem tickets, and button to expand list to 5
 - Highlight top 3 similar tickets
 

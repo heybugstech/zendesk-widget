@@ -21,7 +21,7 @@ function deleteFolderRecursively(folder: string, fileWhitelist: string[]) {
       if (!fileWhitelist.includes(file)) {
         const fullPath = folderWithPath + '/' + file;
         fs.rm(fullPath, { recursive: true }, () => {
-          console.log(`Deleted file/files in "${fullPath}""`);
+          console.log(`Deleted file/files in "${fullPath}"`);
         });
       }
     }

@@ -15,7 +15,7 @@ export class KnownIssuesSection {
   public addOneKnownIssue() {
     const placeholderText = {
       class: cssClasses.knownIssueText,
-      text: 'I am a placeholder text'
+      text: 'Placeholder text'
     };
     this.knownIssuesDiv.addDivContainer(cssClasses.knownIssue, placeholderText);
   }

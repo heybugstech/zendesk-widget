@@ -1,12 +1,3 @@
-import { ZendeskWidget, htmlIds } from './zendeskWidget.js';
+import ZendeskWidget from './zendeskWidget.js';
 
-const zendeskWidget = new ZendeskWidget(htmlIds.KNOWN_ISSUES);
-
-// gather known issues
-/*
-
-
-
-
-
-*/
+ZendeskWidget.getTopIssuesOnLoad();

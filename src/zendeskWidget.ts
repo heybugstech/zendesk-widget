@@ -1,27 +1,28 @@
-declare const ZAFClient: any;
 import { KnownIssuesSection } from './knownIssues/index.js';
 
-export enum htmlIds {
+enum htmlIds {
   KNOWN_ISSUES = 'known-issues-section'
 }
 
-export class ZendeskWidget {
+class ZendeskWidget {
   protected zendeskClient: any;
   protected knownIssuesSection: KnownIssuesSection;
 
   constructor(knownIssuesParentId: htmlIds) {
     this.initZendeskClient();
     this.knownIssuesSection = new KnownIssuesSection(knownIssuesParentId);
-    this.getTopIssuesOnLoad();
   }
 
   private initZendeskClient() {
+    // @ts-expect-error ZD client does not have a type
     this.zendeskClient = ZAFClient.init();
   }
 
-  public getTopIssuesOnLoad() {
+  public getTopIssuesOnLoad(): void {
     this.knownIssuesSection.addOneKnownIssue();
     this.knownIssuesSection.addOneKnownIssue();
     this.knownIssuesSection.addOneKnownIssue();
   }
 }
+
+export default new ZendeskWidget(htmlIds.KNOWN_ISSUES);
